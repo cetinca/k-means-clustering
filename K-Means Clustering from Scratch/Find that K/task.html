@@ -1,0 +1,14 @@
+<h5 id="description">Description</h5>
+<p>Congratulations! Now you have a working KMeans algorithm. However, simply implementing the algorithm is not enough, as it does require us to tune a major hyperparameter: <code class="java">k</code>.</p>
+<p>To do it, we suggest you run your coded algorithm with different <code class="java">k</code> values ranging from <code class="java">1</code> to <code class="java">10</code> and find which <code class="java">k</code> value is the most accurate. The easiest way to do that is to plot the dependence of the "error" from <code class="java">k</code>. We would introduce the "error" in the following way: let us say that it is the sum of distances from each object to its cluster center divided by the number of clusters. You will see that at some point, the "error" stops falling drastically; that is when you need to stop.</p>
+<p>Of course, there's no clear definition of when that "stop falling drastically" occurs. Suppose that the rule for this particular case is the error decrease of 20%. Once the error decrease is less than 20%, stop increasing <code class="java">k</code>.</p>
+<p>Try to determine the appropriate <code class="java">k</code> on your own to compare it with the one we expected at the end of the project.</p>
+<h5 id="objectives">Objectives</h5>
+<ol>
+<li>Use the custom KMeans class with <code class="java">k</code> ranging from <code class="java">1</code> to <code class="java">10</code> (both included) and calculate the final mean square distance from objects of each cluster to the cluster's center. The "mean" is implied only "inside" of each class distance measurement; for the final sum use the <code class="java">sum</code>, not <code class="java">mean</code>.</li>
+<li>Guess an appropriate <code class="java">k</code> for the data. It is clear that the more the value of <code class="java">k</code> is, the less "error" will be present, but who really needs millions of clusters for their data?</li>
+<li>Print the results for the "error" for each of the <code class="java">k</code> values.</li>
+</ol>
+<h5 id="example">Example</h5>
+<p><strong>Example 1:</strong> <em>an example of the output</em></p>
+<pre><code class="language-no-highlight">[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</code></pre>

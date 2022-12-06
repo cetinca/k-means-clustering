@@ -1,0 +1,13 @@
+type: hyperskill
+title: K-Means Clustering from Scratch
+language: English
+summary: "<p>In this project, you&#39;ll dive into implementing one of the simplest\
+  \ algorithms to cluster your data:&nbsp;<strong>KMeans</strong>. Explore it from\
+  \ scratch using only <code>numpy</code>, <code>pandas</code>,&nbsp;and <code>matplotlib</code>\
+  \ for visualization. We&#39;ll stick to the Wine dataset, so at least it will not\
+  \ be boring!</p><br/><br/>Learn more at <a href=\"https://hyperskill.org/projects/286?utm_source=ide&utm_medium=ide&utm_campaign=ide&utm_content=project-card\"\
+  >https://hyperskill.org/projects/286</a>"
+programming_language: Python
+content:
+- K-Means Clustering from Scratch
+mode: Study

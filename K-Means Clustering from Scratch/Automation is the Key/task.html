@@ -1,0 +1,15 @@
+<h5 id="description">Description</h5>
+<p>It is now time to automate the whole process of the appropriate <code class="java">k</code> search. As we mentioned before, we would rely on a limited "error" decrease as a criterion for an appropriate <code class="java">k</code> — when the "error" decrease percentage is less than <code class="java">p</code>, consider that the appropriate <code class="java">k</code> has been reached.</p>
+<p>One thing we have to make our mind on is whether we would return the actual  <code class="java">k</code> value that gives us the error decrease less than <code class="java">p</code> or <code class="java">k-1</code>. For this project, we believe taking <code class="java">k-1</code> is a more accurate choice.</p>
+<p>As always, there is a question of whether the appropriate <code class="java">k</code> value is the one that gives us the error decrease less than <code class="java">p</code> or the previous one. We would stick to the first one, so if the value of <code class="java">k</code> is what we found, we would return <code class="java">k-1</code> as an appropriate <code class="java">k</code>.</p>
+<p>In this stage, automate the process of finding an appropriate <code class="java">k</code>. Create a loop that would increase <code class="java">k</code> for your custom KMeans class starting from <code class="java">1</code> until an appropriate <code class="java">k</code> is found. Your ultimate criterion is an error decrease percentage less than <code class="java">p</code>:</p>
+<p><span class="math-tex"><span class="math-tex">\[\text{abs}[(\text{Error}_{k-1} - \text{Error}_{k}) /\text{Error}_{k-1} \]</span></span></p>
+<p>Once reached, return <code class="java">k-1</code>.</p>
+<h5 id="objectives">Objectives</h5>
+<ol>
+<li>Automate finding an appropriate <code class="java">k</code>. One of the ways to do it is to create a function named <code class="java">find_appropriate_k</code>.</li>
+<li>Print the resulting appropriate <code class="java">k</code> for your <code class="java">X</code> data. Use <code class="java">p=0.2</code> for your function.</li>
+</ol>
+<h5 id="example">Example</h5>
+<p><strong>Example 1:</strong> <em>an example of the output</em></p>
+<pre><code class="language-no-highlight">6</code></pre>

@@ -1,0 +1,25 @@
+<h5 id="description">Description</h5>
+<p>Create a class wrap for the KMeans algorithm in this stage. We suggest the following construction for it:</p>
+<pre><code class="language-python">class CustomKMeans:
+	def __init__(self, k):
+		self.k = k
+		self.centers = None
+
+	def fit(self, X, eps=1e-6):
+		...
+
+	def predict(self, X):
+		...
+</code></pre>
+<p>However, feel free to change it.</p>
+<p>The fit method must be based on the functions you've created. Use the first <code class="language-python">k</code> objects of <code class="language-python">X</code> as the starting points for the cluster centers. It might not be the best solution, but let us keep it this simple. The predict method is expected to take <code class="language-python">X</code> array of object features and return a cluster number for each object.</p>
+<p>To check whether the algorithm is finished or not at each step, use a small <code class="language-python">eps</code> value (say, <code class="language-python">eps=1e-6</code>) and check if the square distance from the "old" cluster center to a "new" one is no more than <code class="language-python">eps</code>. You can use <code class="language-python">numpy.linalg.norm</code> to calculate that.</p>
+<h5 id="objectives">Objectives</h5>
+<ol>
+<li>Implement the <code class="language-python">fit</code> method for the class based on the functions from stages 1 and 2 using the first <code class="language-python">k</code> objects of <code class="language-python">X</code> as the initial clusters' centers. Do not forget to check whether the algorithm is finished at each step using <code class="language-python">eps</code>.</li>
+<li>Implement the <code class="language-python">predict</code> method for the class.</li>
+<li>Fit your model with <code class="language-python">k=2</code> and print the predictions for the first ten objects of <code class="language-python">X</code>.</li>
+</ol>
+<h5 id="examples">Examples</h5>
+<p><strong>Example 1:</strong> <em>an example of the output</em></p>
+<pre><code class="language-no-highlight">[0, 1, 2, 2, 1, 0, 0, 1, 2, 2]</code></pre>

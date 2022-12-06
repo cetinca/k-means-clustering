@@ -1,0 +1,15 @@
+<h5 id="description">Description</h5>
+<p></p><div class="alert alert-primary">Let's discuss a few things before we start. We use the Wine dataset provided by the <code class="java">sklearn</code> package. Initially, it contained the <code class="java">target</code> variable that is not used by us in the clustering task and will be the result for clustering (since there are groups to predict, it is natural to suppose that some "optimal" clustering would be these groups). So, we have removed it for you already.
+
+<p>We also need you to provide the desired outputs as Python lists so that our tests would work correctly whenever there is more than one value to be printed. You can always make <code class="java">list(..)</code> of your <code class="java">np.ndarray</code> to convert it to a list.</p></div>
+<p>The first step of the KMeans loop (excluding the very first step) is to determine to which cluster every object belongs; in other words, to calculate the distances to each cluster's center and find the minimal one. We mean the <strong>euclidean distance</strong> whenever we say "distance."</p>
+<p>We would, later on, start wrapping everything into a single class (we are going to name it <code class="java">CustomKMeans</code>), but you can begin creating one right now to make this function a class method. Alternatively, you can make it a standalone function; we would suggest naming it <code class="java">find_nearest_center</code>. Choose whatever you find appropriate.</p>
+<p>We expect the function to have the features array and the centroids' positions as input and return an array of the nearest center's labels for each input object.</p>
+<h5 id="objectives">Objectives</h5>
+<ol>
+<li>Create the <code class="java">find_nearest_center</code> function.</li>
+<li>Print the result of your function for the last ten objects of the <code class="java">X</code> array while having the <strong>first three objects</strong> as the clusters' centers.</li>
+</ol>
+<h5 id="examples">Examples</h5>
+<p><strong>Example 1:</strong> <em>an example of the output</em></p>
+<pre><code class="language-no-highlight">[0, 1, 2, 2, 1, 0, 0, 1, 2, 2]</code></pre>

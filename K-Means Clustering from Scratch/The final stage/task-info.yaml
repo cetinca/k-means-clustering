@@ -1,0 +1,128 @@
+type: edu
+files:
+- name: solution.py
+  visible: true
+  text: |
+    import numpy as np
+    from sklearn.datasets import load_wine
+    from matplotlib import pyplot as plt
+    import seaborn as sns
+    from sklearn.preprocessing import MinMaxScaler
+
+    # scroll down to the bottom to implement your solution
+
+
+    def plot_comparison(data: np.ndarray, predicted_clusters: np.ndarray, true_clusters: np.ndarray = None,
+                        centers: np.ndarray = None, show: bool = True):
+
+        # Use this function to visualize the results on Stage 6.
+
+        if true_clusters is not None:
+            plt.figure(figsize=(20, 10))
+
+            plt.subplot(1, 2, 1)
+            sns.scatterplot(x=data[:, 0], y=data[:, 1], hue=predicted_clusters, palette='deep')
+            if centers is not None:
+                sns.scatterplot(x=centers[:, 0], y=centers[:, 1], marker='X', color='k', s=200)
+            plt.grid()
+
+            plt.subplot(1, 2, 2)
+            sns.scatterplot(x=data[:, 0], y=data[:, 1], hue=true_clusters, palette='deep')
+            if centers is not None:
+                sns.scatterplot(x=centers[:, 0], y=centers[:, 1], marker='X', color='k', s=200)
+            plt.grid()
+        else:
+            plt.figure(figsize=(10, 10))
+            sns.scatterplot(x=data[:, 0], y=data[:, 1], hue=predicted_clusters, palette='deep')
+            if centers is not None:
+                sns.scatterplot(x=centers[:, 0], y=centers[:, 1], marker='X', color='k', s=200)
+            plt.grid()
+
+        plt.savefig('Visualization.png', bbox_inches='tight')
+        if show:
+            plt.show()
+
+
+    if __name__ == '__main__':
+
+        # Load data
+        data = load_wine(as_frame=True, return_X_y=True)
+        X_full, y_full = data
+
+        # Permutate it to make things more interesting
+        rnd = np.random.RandomState(42)
+        permutations = rnd.permutation(len(X_full))
+        X_full = X_full.iloc[permutations]
+        y_full = y_full.iloc[permutations]
+
+        # From dataframe to ndarray
+        X_full = X_full.values
+        y_full = y_full.values
+
+        # Scale data
+        scaler = MinMaxScaler()
+        X_full = scaler.fit_transform(X_full)
+
+        # write your code here
+  learner_created: false
+- name: test/__init__.py
+  visible: false
+  learner_created: false
+- name: test/tests.py
+  visible: false
+  text: |
+    from hstest import StageTest, TestCase, CheckResult
+    from hstest.stage_test import List
+    from utils.utils import full_check, get_list
+
+    # The source data I will test on
+    true_data = [1, 1, 2, 1, 0, 1, 0, 2, 0, 2, 1, 2, 1, 2, 1, 0, 0, 0, 1, 0]
+
+
+    class Tests6(StageTest):
+
+        def generate(self) -> List[TestCase]:
+            return [TestCase(time_limit=1000000)]
+
+        def check(self, reply: str, attach):
+            reply = reply.strip().lower()
+
+            if len(reply) == 0:
+                return CheckResult.wrong("No output was printed!")
+
+            if reply.count('[') != 1 or reply.count(']') != 1:
+                return CheckResult.wrong('No expected list was found in output!')
+
+            # Getting the student's results from the reply
+
+            try:
+                student, _ = get_list(reply)
+            except Exception:
+                return CheckResult.wrong('Seems that data output is in wrong format!')
+
+            error = 'Incorrect cluster labels.'
+            check_result = full_check(student, true_data, '', tolerance=0, error_str=error)
+            if check_result:
+                return check_result
+
+            return CheckResult.correct()
+
+
+    if __name__ == '__main__':
+        Tests6().run_tests()
+  learner_created: false
+- name: tests.py
+  visible: false
+  text: |
+    from test.tests import Tests6
+
+    if __name__ == '__main__':
+        Tests6().run_tests()
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/22700#comment
+status: Solved
+feedback:
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">JetBrains
+    Academy</a> to continue learning.
+  time: "Tue, 06 Dec 2022 09:24:39 UTC"
+record: -1

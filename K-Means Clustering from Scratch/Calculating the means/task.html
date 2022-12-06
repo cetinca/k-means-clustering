@@ -1,0 +1,12 @@
+<h5 id="description">Description</h5>
+<p>The next step of the KMeans algorithm is to calculate new coordinates for each cluster's center once you know which of the "old" clusters every object belongs to. To do it, you need to calculate each feature's mean value for each cluster's objects — and name it the "new" cluster center.</p>
+<p>Name the new function <code class="java">calculate_new_centers</code>. This new function, together with the previous one, would be later wrapped into a class. You could either implement it into the class now or make it a standalone function. You get to decide whatever feels better to you.</p>
+<h5 id="objectives">Objectives</h5>
+<ol>
+<li>Create the <code class="java">calculate_new_centers</code> function and calculate new centers as the mean features for each of the classes;</li>
+<li>Use the labels you got in the previous stage (using the <code class="java">find_nearest_center</code> function) to calculate new centers;</li>
+<li>Print the resulting coordinates of the centers. Use the <code class="java">.flatten()</code> method to turn a 2D array into 1D.</li>
+</ol>
+<h5 id="examples">Examples</h5>
+<p><strong>Example 1:</strong> <em>an example of the output</em></p>
+<pre><code class="language-no-highlight">[0.31, 0.79, 0.35, 0.45, 0.91, 0.23, 0.65, 0.31, 0.03, 0.02, 0.02, 0.57, 0.47, 0.33, 0.73, 0.81, 0.8, 0.89, 0.29 0.5, 0.04, 0.91, 0.84, 0.08, 0.8, 0.77, 0.82, 0.82, 0.6, 0.4, 0.83, 0.97, 0.1, 0.18, 0.87, 0.73, 0.29, 0.39, 0.89]</code></pre>
